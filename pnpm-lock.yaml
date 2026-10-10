@@ -13,8 +13,8 @@ importers:
         version: 19.3.0
     devDependencies:
       '@bugdump/sdk':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: 0.0.46
       '@types/react':
         specifier: ^19.2.18
         version: 19.3.0
@@ -36,8 +36,8 @@ importers:
 
 packages:
 
-  '@bugdump/sdk@0.0.45':
-    resolution: {integrity: sha512-p6DRYuN0apMgrjH6pyPYysoA8L4LWTdf9/7NJuMuQxMTgiMkcuxvV1oILZtwkeyskv+jmIRki07auTWBeasatg==}
+  '@bugdump/sdk@0.0.46':
+    resolution: {integrity: sha512-CgaNTHc/NMRA3V9Y+cyLooO+famJ2hWWvSJAh7kdfFJIYZJxuNZ15CenJe7gUaR4CMTrnhOn+Tn3ubDN5ftu/w==}
 
   '@esbuild/aix-ppc64@0.27.7':
     resolution: {integrity: sha512-EKX3Qwmhz1eMdEJokhALr0YiD0lhQNwDqkPYyPhiSwKrh7/4KRjQc04sZ8db+5DVVnZ1LmbNDI1uAMPEUBnQPg==}
@@ -1032,7 +1032,7 @@ packages:
 
 snapshots:
 
-  '@bugdump/sdk@0.0.45':
+  '@bugdump/sdk@0.0.46':
     dependencies:
       '@rrweb/packer': 2.0.1
       '@rrweb/record': 2.0.1
@@ -1273,12 +1273,12 @@ snapshots:
 
   '@rrweb/packer@2.0.1':
     dependencies:
-      '@rrweb/types': 2.0.1
+      '@rrweb/types': 2.1.7
       fflate: 0.4.9
 
   '@rrweb/record@2.0.1':
     dependencies:
-      '@rrweb/types': 2.0.1
+      '@rrweb/types': 2.1.7
       '@rrweb/utils': 2.1.7
       rrweb: 2.1.7
 

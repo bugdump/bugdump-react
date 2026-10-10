@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.46
+
+Needs `@bugdump/sdk` 0.0.46. Released together with it; the code of neither package changed.
+
+### Fixed
+
+- **The README's `app/global-error.tsx` example** now starts a widget of its own. By the time that file renders, the provider has destroyed its widget, so the old example sent nothing. The README also says correctly when `onError` runs and what a nested provider does.
+
 ## 0.0.45
 
 Needs `@bugdump/sdk` 0.0.45. Released together with it, at the same version, as every release of the two packages will be.

@@ -1,6 +1,6 @@
 {
   "name": "@bugdump/react",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "Official Bugdump React bindings - a provider, a hook and an error boundary for @bugdump/sdk",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -46,11 +46,11 @@
   "homepage": "https://bugdump.com",
   "sideEffects": false,
   "peerDependencies": {
-    "@bugdump/sdk": ">=0.0.45 <0.1.0",
+    "@bugdump/sdk": ">=0.0.46 <0.1.0",
     "react": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
-    "@bugdump/sdk": "0.0.45",
+    "@bugdump/sdk": "0.0.46",
     "@types/react": "^19.2.18",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.2.0",
