@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "lib": ["ES2022", "DOM"],
+    "moduleDetection": "force",
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
