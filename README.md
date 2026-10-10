@@ -58,7 +58,7 @@ The widget records console output and network requests from the moment it starts
 
 ### One provider
 
-Use one provider per app, and don't call `destroy()` or `init()` yourself underneath it. There is only one widget per page: a second provider shares it and destroys it when it unmounts, and an instance you replace yourself leaves the hook holding the old one. To change the language, change the provider's `locale`.
+Use one provider per app, and don't call `destroy()` or `init()` yourself underneath it. There is only one widget per page: a provider nested inside another starts the widget itself and destroys it when it unmounts, while the outer one still hands it out, and an instance you replace yourself leaves the hook holding the old one. To change the language, change the provider's `locale`.
 
 ## useBugdump
 
@@ -110,7 +110,7 @@ import { BugdumpErrorBoundary, BugdumpProvider } from '@bugdump/react';
 
 - Put it **inside** the provider. An error in the very first render happens before the widget has started; the boundary hands it to the provider, which sends it once the widget is running. A boundary above the provider would replace the provider before it starts.
 - `fallback` is an element, or a function that gets the error and a `reset` that renders the children again.
-- `onError` is optional and runs after the error is sent.
+- `onError` is optional and runs for every caught error, after the boundary has handed it on.
 - While the provider's `enabled` is `false`, caught errors are not sent, and not kept for later either.
 - In a layout that stays mounted across navigations, give the boundary `key={pathname}`, so its fallback does not outlive the page that failed.
 - Without a provider above it, the boundary sends to the instance `Bugdump.init()` created, if there is one.
@@ -140,7 +140,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
 
 ### React 18 in development
 
-In development, React 18 also re-throws a caught error to `window`. Once the widget is running, the SDK sees that copy first and sends each error only once per tab session, so the event arrives as unhandled and without the component stack. React 19, and React 18 in production, report through the boundary only, with the stack.
+In development, React 18 also re-throws a caught error to `window`. Once the widget is running, the SDK sees that copy first and sends each error only once per tab session, so the event arrives marked as an uncaught error, without the component stack. React 19, and React 18 in production, report through the boundary only, with the stack.
 
 ## Next.js App Router
 
@@ -164,7 +164,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 A Server Component can pass only serializable props. A `config` with functions or RegExps (`consoleFilter`, `networkFilter`, `ignoreErrors`, `beforeSend`), or a boundary with a function `fallback` or `onError`, goes in a file of your own that starts with `'use client'`, and the layout renders that.
 
-`app/global-error.tsx` replaces the root layout, so it sits outside the provider and cannot use the hook. Send from the SDK directly:
+`app/global-error.tsx` replaces the root layout. By the time it renders, the provider has unmounted and destroyed its widget, so start one there to send the error. It is a fresh widget, so the event has no console or network history from before the crash.
 
 ```tsx
 'use client';
@@ -174,7 +174,8 @@ import { useEffect } from 'react';
 
 export default function GlobalError({ error }: { error: Error }) {
   useEffect(() => {
-    Bugdump.getInstance()?.captureException(error);
+    const bugdump = Bugdump.getInstance() ?? Bugdump.init({ apiKey: process.env.NEXT_PUBLIC_BUGDUMP_KEY! });
+    bugdump.captureException(error);
   }, [error]);
 
   return (
