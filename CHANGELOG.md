@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.47
+
+Needs `@bugdump/sdk` 0.0.47. Released together with it; the code of this package did not change.
+
+### Changed
+
+- **On screens up to 440px wide the widget shows only the round button.** The `bubbleText` teaser next to it is hidden there, because it covered the host page's content.
+- **`--bugdump-offset-bottom`** lifts the button above a fixed bar at the bottom of the page, such as a mobile tab bar. Set it on your page, for example `:root { --bugdump-offset-bottom: 64px; }`; the widget adds it to its 20px margin.
+
 ## 0.0.46
 
 Needs `@bugdump/sdk` 0.0.46. Released together with it; the code of neither package changed.
