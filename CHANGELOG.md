@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.48
+
+Needs `@bugdump/sdk` 0.0.48. Released together with it; the code of this package did not change.
+
+### Fixed
+
+- **iOS no longer zooms the page when you tap into the report form on an iPad or a phone held sideways.** The description and the text fields now use 16px type on every screen, not only up to 440px wide.
+
 ## 0.0.47
 
 Needs `@bugdump/sdk` 0.0.47. Released together with it; the code of this package did not change.
