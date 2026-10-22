@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.0.49
+
+Needs `@bugdump/sdk` 0.0.49. Released together with it; the code of this package did not change.
+
+### Fixed
+
+- **Screen recordings now carry the microphone when the shared screen has no sound of its own.** In Firefox, in Safari, and in Chrome when a window or the whole screen was shared or "Share tab audio" was left unchecked, the mic button lit up but the recording was silent.
+
+### Added
+
+- **A screen recording says whether the microphone was on.** Its attachment metadata carries `micUsed`: `true` when the reporter's microphone was on at any moment of the recording.
+
 ## 0.0.48
 
 Needs `@bugdump/sdk` 0.0.48. Released together with it; the code of this package did not change.
