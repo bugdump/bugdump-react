@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.50
+
+Needs `@bugdump/sdk` 0.0.50. Released together with it; the code of this package did not change.
+
+### Changed
+
+- **The description is now optional.** The widget sends a report with no text and no attachments, and `description` is optional in `submit()`.
+- **The default placeholder now asks for feedback.** `descriptionPlaceholder` reads "Share your feedback or report a problem" instead of "What's on your mind?", translated in every built-in language. A value you pass in `translations` still wins.
+
+### Deprecated
+
+- **`emptyDescriptionMessage` has no effect.** The widget no longer shows this message. The key still compiles, and you can remove it from your `translations`.
+
 ## 0.0.49
 
 Needs `@bugdump/sdk` 0.0.49. Released together with it; the code of this package did not change.
