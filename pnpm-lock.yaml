@@ -13,8 +13,8 @@ importers:
         version: 19.3.0
     devDependencies:
       '@bugdump/sdk':
-        specifier: 0.0.50
-        version: 0.0.50
+        specifier: 0.0.51
+        version: 0.0.51
       '@types/react':
         specifier: ^19.2.18
         version: 19.3.0
@@ -36,8 +36,8 @@ importers:
 
 packages:
 
-  '@bugdump/sdk@0.0.50':
-    resolution: {integrity: sha512-ikxs0L6uruIQwyJvtM7Eni6RYrp7GuN5hbDxQMsSndDiCEb0JK7SNraEUteqU9TrUM9NIt6AUlO+lN9kUAkp5A==}
+  '@bugdump/sdk@0.0.51':
+    resolution: {integrity: sha512-/+7bZ1sc4joQUTprTV2GVTRQ/x3ygI2nZoMqWt428WCe0fEGKm1uURlb8b9QYIFtV6A+u1IUo7KrcMmhqGt9ag==}
 
   '@esbuild/aix-ppc64@0.27.7':
     resolution: {integrity: sha512-EKX3Qwmhz1eMdEJokhALr0YiD0lhQNwDqkPYyPhiSwKrh7/4KRjQc04sZ8db+5DVVnZ1LmbNDI1uAMPEUBnQPg==}
@@ -1032,7 +1032,7 @@ packages:
 
 snapshots:
 
-  '@bugdump/sdk@0.0.50':
+  '@bugdump/sdk@0.0.51':
     dependencies:
       '@rrweb/packer': 2.0.1
       '@rrweb/record': 2.0.1

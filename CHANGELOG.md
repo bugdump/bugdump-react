@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.51
+
+Needs `@bugdump/sdk` 0.0.51. Released together with it; the code of this package did not change.
+
+### Fixed
+
+- **Drawing on a screenshot no longer adds actions to the report.** Every click in the screenshot editor (its tools, colors, canvas, Cancel and Done) was recorded as a `Clicked <div>` action between the reporter's real steps.
+
 ## 0.0.50
 
 Needs `@bugdump/sdk` 0.0.50. Released together with it; the code of this package did not change.
